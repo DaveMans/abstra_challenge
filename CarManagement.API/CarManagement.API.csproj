@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Asp.Versioning.Mvc" Version="8.1.0" />
+    <PackageReference Include="Asp.Versioning.Mvc.ApiExplorer" Version="8.1.0" />
+    <PackageReference Include="CorrelationId" Version="3.0.1" />
+    <PackageReference Include="HotChocolate.AspNetCore" Version="13.8.6" />
+    <PackageReference Include="HotChocolate.AspNetCore.Authorization" Version="13.8.6" />
+    <PackageReference Include="HotChocolate.Data" Version="13.8.6" />
+    <PackageReference Include="HotChocolate.Types" Version="13.8.6" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.8" />
+    <PackageReference Include="Serilog.AspNetCore" Version="8.0.1" />
+    <PackageReference Include="Serilog.Enrichers.Environment" Version="2.2.0" />
+    <PackageReference Include="Serilog.Sinks.Console" Version="5.0.1" />
+    <PackageReference Include="Serilog.Sinks.File" Version="5.0.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CarManagement.Application\CarManagement.Application.csproj" />
+    <ProjectReference Include="..\CarManagement.Infrastructure\CarManagement.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>

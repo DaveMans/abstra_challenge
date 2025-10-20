@@ -1,0 +1,48 @@
+# .NET and IDE
+bin/
+obj/
+*.user
+*.rsuser
+*.suo
+*.userosscache
+*.sln.docstates
+
+# VS Code
+.vscode/
+.history/
+
+# Visual Studio
+.vs/
+
+# JetBrains Rider
+.idea/
+*.sln.iml
+
+# Logs
+*.log
+logs/
+
+# Build
+artifacts/
+TestResults/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# ASP.NET
+appsettings.*.local.json
+secrets.json
+
+# dotnet tools
+/.config/dotnet-tools.json
+
+# EF
+Migrations/
+
+# Coverage
+coverage/
+*.coverage*
+
+# Others
+.env

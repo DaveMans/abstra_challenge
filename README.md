@@ -1,0 +1,57 @@
+# CarManagement API (Clean Architecture)
+
+A production-ready .NET 8 API implementing Clean Architecture for managing car brands, lines (models), and model years. Provides REST and planned GraphQL endpoints, CQRS with MediatR, EF Core (SQL Server), caching (Redis + Memory), JWT auth, Serilog logging, API Versioning, rate limiting, and comprehensive tests.
+
+## Solution Structure
+```
+CarManagement.sln
+├── CarManagement.Domain/           # Core entities, repository contracts, specifications
+├── CarManagement.Application/      # CQRS (MediatR), DTOs, validation, mapping, business rules
+├── CarManagement.Infrastructure/   # EF Core DbContext, repositories, UoW, caching, JWT
+├── CarManagement.API/              # Web API (REST v1, GraphQL), middlewares, DI
+└── CarManagement.Tests/
+    ├── CarManagement.UnitTests/
+    └── CarManagement.IntegrationTests/
+```
+
+## Getting Started
+- Prerequisites:
+  - .NET SDK 8.x
+  - SQL Server (LocalDB or full SQL Server)
+  - Redis (optional for caching; fallback to MemoryCache is supported)
+
+### Configure
+- Connection string: `CarManagement.API/appsettings.json` key `ConnectionStrings:DefaultConnection`.
+- Serilog sinks and logging level: `CarManagement.API/appsettings.json`.
+
+### Run
+```
+dotnet build CarManagement.sln
+ dotnet run --project CarManagement.API/CarManagement.API.csproj
+```
+- Swagger UI: http://localhost:5000/swagger (port may vary)
+- REST API base: `/api/v1`
+
+### Migrations (to be added)
+```
+# Example
+ dotnet ef migrations add Initial --project CarManagement.Infrastructure --startup-project CarManagement.API
+ dotnet ef database update --project CarManagement.Infrastructure --startup-project CarManagement.API
+```
+
+## Features Implemented
+- Domain entities: `Brand`, `Line`, `ModelYear` with soft-delete and timestamps.
+- Specifications for querying with paging/sorting.
+- Application CQRS: Brands CRUD, Lines by Brand.
+- Infrastructure: EF Core with configurations and Unit of Work.
+- API: v1 Brands endpoints, API versioning, response compression, CORS, rate limiting, Serilog.
+
+## Roadmap
+- Authentication: JWT + refresh tokens, protect write endpoints.
+- Caching: Redis cache-aside and invalidation.
+- GraphQL: HotChocolate schema (queries and mutations) with DataLoaders.
+- Global exception handling with Problem Details + correlation IDs.
+- Seed data, Dockerfile, README expansion, Postman collection, tests.
+
+## License
+MIT
