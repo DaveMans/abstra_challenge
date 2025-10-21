@@ -60,6 +60,9 @@ dotnet dev-certs https --trust
 - API: v1 Brands endpoints, API versioning, response compression, CORS, rate limiting, Serilog.
 
 ## Swagger endpoint
+
+<img width="1672" height="700" alt="image" src="https://github.com/user-attachments/assets/1c474cb0-8cf5-40a1-ad17-f76a6e6f8793" />
+
 - http://localhost:5000/swagger 
 
 ### Endpoints - examples
