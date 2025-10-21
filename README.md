@@ -29,6 +29,19 @@ CarManagement.sln
 dotnet build CarManagement.sln
  dotnet run --project CarManagement.API/CarManagement.API.csproj
 ```
+- Run on a fixed port (helpful for bookmarks and `.http` files):
+```
+ASPNETCORE_URLS="http://localhost:5229" dotnet run --project CarManagement.API/CarManagement.API.csproj
+```
+- Provide a connection string via environment variable (macOS/Linux syntax):
+```
+export ConnectionStrings__DefaultConnection="Server=localhost,1433;Database=CarManagement;User Id=sa;Password=Your_strong_password123;TrustServerCertificate=True;"
+dotnet run --project CarManagement.API/CarManagement.API.csproj
+```
+- If using HTTPS locally, trust dev certs once:
+```
+dotnet dev-certs https --trust
+```
 - Swagger UI: http://localhost:5000/swagger (port may vary)
 - REST API base: `/api/v1`
 
