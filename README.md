@@ -46,12 +46,25 @@ dotnet build CarManagement.sln
 - Infrastructure: EF Core with configurations and Unit of Work.
 - API: v1 Brands endpoints, API versioning, response compression, CORS, rate limiting, Serilog.
 
-## Roadmap
-- Authentication: JWT + refresh tokens, protect write endpoints.
-- Caching: Redis cache-aside and invalidation.
-- GraphQL: HotChocolate schema (queries and mutations) with DataLoaders.
-- Global exception handling with Problem Details + correlation IDs.
-- Seed data, Dockerfile, README expansion, Postman collection, tests.
+## Swagger endpoint
+- http://localhost:5000/swagger 
 
-## License
-MIT
+### Endpoints - examples
+
+#### Get all brands
+- Method: `GET`
+- URL: `/api/v1/brands`
+- Example: http://localhost:5000/api/v1/brands
+
+#### Get a brand by id
+- Method: `GET`
+- URL: `/api/v1/brands/{id}`
+- Example: http://localhost:5000/api/v1/brands/1
+
+#### Create a brand
+- Method: `POST`
+- URL: `/api/v1/brands`
+- Example: http://localhost:5000/api/v1/brands
+
+
+
